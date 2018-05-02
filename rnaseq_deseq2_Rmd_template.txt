@@ -6,7 +6,7 @@
 #select the portion of the info sheet relevant to the two conditions being tested
 coldata_curr <- coldata[which(coldata$Label==case | coldata$Label==ctrl),]
 coldata_curr <- coldata_curr[order(coldata_curr$Sample), ]
-DT::datatable(coldata_curr, rownames=FALSE, options = list(dom = 't', columnDefs = list(list(className = 'dt-center', targets = "_all")))) # dom = 't' removes search box
+DT::datatable(coldata_curr, rownames=FALSE, options = list(columnDefs = list(list(className = 'dt-center', targets = "_all")))) # dom = 't' removes search box but does not show all samples
 rownames(coldata_curr) <- coldata_curr$Sample
 coldata_curr$Sample <- NULL
 ```
